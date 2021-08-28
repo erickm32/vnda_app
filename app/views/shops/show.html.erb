@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+  <div><strong>Name: </strong><%= @shop.name %></div>
+  <div><strong>Url: </strong><%= @shop.url %></div>
+  <div><strong>Token: </strong><%= @shop.token %></div>
+  <div><strong>Remote Id: </strong><%= @shop.remote_id %></div>
+<div>
+
+<%= link_to 'Edit', edit_shop_path(@shop) %> |
+<%= link_to 'Back', shops_path %>

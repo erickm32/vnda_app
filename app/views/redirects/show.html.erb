@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+  <div><strong>Shop: </strong><%= @redirect.shop.name %></div>
+  <div><strong>Origin: </strong><%= @redirect.origin %></div>
+  <div><strong>Destination: </strong><%= @redirect.destination %></div>
+  <div><strong>api_id: </strong><%= @redirect.api_id %></div>
+<div>
+
+<%= link_to 'Edit', edit_redirect_path(@redirect) %> |
+<%= link_to 'Back', redirects_path %>

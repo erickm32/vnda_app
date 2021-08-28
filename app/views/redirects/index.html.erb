@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Redirects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shop</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Api Id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @redirects.each do |redirect| %>
+      <tr>
+        <td><%= redirect.shop.name %></td>
+        <td><%= redirect.origin %></td>
+        <td><%= redirect.destination %></td>
+        <td><%= redirect.api_id %></td>
+
+        <td><%= link_to 'Show', redirect %></td>
+        <td><%= link_to 'Edit', edit_redirect_path(redirect) %></td>
+        <td><%= link_to 'Destroy', redirect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Redirect', new_redirect_path %>
