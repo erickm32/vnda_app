@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_28_153458) do
+ActiveRecord::Schema.define(version: 2021_08_29_012007) do
 
   create_table "redirects", force: :cascade do |t|
     t.string "origin", default: ""
@@ -29,6 +29,18 @@ ActiveRecord::Schema.define(version: 2021_08_28_153458) do
     t.string "url", default: ""
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sync_jobs", force: :cascade do |t|
+    t.integer "status", default: 0
+    t.integer "operation", default: 0
+    t.integer "api_id"
+    t.text "params"
+    t.text "sync_errors"
+    t.integer "redirect_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["redirect_id"], name: "index_sync_jobs_on_redirect_id"
   end
 
 end

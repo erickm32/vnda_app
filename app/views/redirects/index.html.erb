@@ -11,16 +11,34 @@
 
   <tbody>
     <% @redirects.each do |redirect| %>
-      <tr>
+      <% redirect_synced = redirect.api_id.present? %>
+      <tr style="color: <%= redirect_synced ? 'inherit' : 'red' %>">
         <td><%= redirect.shop.name %></td>
         <td><%= redirect.origin %></td>
         <td><%= redirect.destination %></td>
-        <td><%= redirect.api_id %></td>
+        <td>
+          <span class='badge rounded-pill bg-<%= redirect_synced ? 'success' : 'danger' %>'>
+            <%= redirect_synced ? redirect.api_id : 'X' %>
+          </span>
+        </td>
 
         <td><%= link_to 'Show', redirect, class: 'btn btn-primary btn-sm' %></td>
         <td><%= link_to 'Edit', edit_redirect_path(redirect), class: 'btn btn-primary btn-sm' %></td>
         <td><%= link_to 'Destroy', redirect, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></td>
       </tr>
+    <% end %>
+    <% if @redirects_only_on_api.count > 0 %>
+      <tr><td colspan=7>API Data not synced yet</td></tr>
+      <% @redirects_only_on_api.each do |redirect| %>
+        <tr>
+          <td><%= redirect.shop.name %></td>
+          <td><%= redirect.origin %></td>
+          <td><%= redirect.destination %></td>
+          <td><%= redirect.api_id %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr><td>You are up to date!</td></tr>
     <% end %>
   </tbody>
 </table>
@@ -28,4 +46,4 @@
 <br>
 
 <%= link_to 'New Redirect', new_redirect_path, class: 'btn btn-outline-primary' %>
-<%= link_to 'New Redirect', new_redirect_path %>
+<%= link_to 'Import Redirects', import_redirects_path, class: 'btn btn-primary' %>
