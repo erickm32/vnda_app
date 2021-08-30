@@ -1,1 +1,1 @@
-json.array! @redirects, partial: "redirects/redirect", as: :redirect
+json.array! @redirects, partial: 'redirects/redirect', as: :redirect

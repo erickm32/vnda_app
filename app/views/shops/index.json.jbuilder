@@ -1,1 +1,1 @@
-json.array! @shops, partial: "shops/shop", as: :shop
+json.array! @shops, partial: 'shops/shop', as: :shop

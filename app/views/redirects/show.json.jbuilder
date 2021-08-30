@@ -1,1 +1,1 @@
-json.partial! "redirects/redirect", redirect: @redirect
+json.partial! 'redirects/redirect', redirect: @redirect
