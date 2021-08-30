@@ -9,6 +9,7 @@ AllCops:
     - 'node_modules/**/*'
     - 'bin/**/*'
     - 'lib/tasks/**/*.rake'
+    - 'lib/myapp.rb'
     - 'vendor/bundle/**/*'
 
 Layout/LineLength:
