@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
+  - 2.7.4
 
-* System dependencies
+* Rails version
+  - 6.1.4
 
-* Configuration
+Acho que nenhuma instrução diferenciada é necessária para rodar, fora o padrãozinho pro banco (`db:create db:migrate (ou schema load)`), mas ainda não tem nenhum seeds.rb de verdade no projeto.
 
-* Database creation
+Dá pra rodar `bundle exec rspec` e `bundle exec rubocop`. Porém, acabei não tendo tempo mais tempo aqui em casa para fazer testes adequadamente e mostrar o funcionamento sem precisar realmente subir um servidor.
 
-* Database initialization
+Se tiver mais tempo durante a semana e for do interesse, posso voltar a mexer nisso.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+De qualquer forma, mandei também um "server" sinatra pra replicar as respostas de exemplo da descrição do teste, que foi o que eu utilizei enquanto programava.
+Só rodar um `gem install sinatra` e depois um `ruby lib/myapp.rb`, se quiser usar o mesmo.
