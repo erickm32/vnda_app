@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'bootstrap/scss/bootstrap';
+
+.actions {
+  margin-top: 15px;
+}
+
+.alert.alert-error {
+  background-color: rgba($red, .12);
+  padding: 0 1rem;
+  border: 1px solid $red;
+  border-radius: 0.125rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+
+  .close {
+    display: none;
+  }
+
+  strong {
+    display: block;
+  }
+
+}
