@@ -23,7 +23,7 @@ class RedirectsController < ApplicationController
 
     respond_to do |format|
       if @redirect.save
-        format.html { redirect_to @redirect, notice: 'Redirect was successfully created.' }
+        format.html { redirect_to @redirect, flash: { success: 'Redirect was successfully created.' } }
         format.json { render :show, status: :created, location: @redirect }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -36,7 +36,7 @@ class RedirectsController < ApplicationController
   def update
     respond_to do |format|
       if @redirect.update(redirect_params)
-        format.html { redirect_to @redirect, notice: 'Redirect was successfully updated.' }
+        format.html { redirect_to @redirect, flash: { success: 'Redirect was successfully updated.' } }
         format.json { render :show, status: :ok, location: @redirect }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -49,7 +49,7 @@ class RedirectsController < ApplicationController
   def destroy
     @redirect.destroy
     respond_to do |format|
-      format.html { redirect_to redirects_url, notice: 'Redirect was successfully destroyed.' }
+      format.html { redirect_to redirects_url, flash: { success: 'Redirect was successfully destroyed.' } }
       format.json { head :no_content }
     end
   end

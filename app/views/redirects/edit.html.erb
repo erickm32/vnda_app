@@ -1,6 +1,7 @@
-<h1>Editing Redirect</h1>
+<h3>Editing Redirect</h3>
 
 <%= render 'form', redirect: @redirect %>
 
-<%= link_to 'Show', @redirect %> |
-<%= link_to 'Back', redirects_path %>
+<br>
+<%= link_to 'Show', @redirect, class: 'btn btn-outline-primary' %>
+<%= link_to 'Back', redirects_path, class: 'btn btn-outline-primary' %>

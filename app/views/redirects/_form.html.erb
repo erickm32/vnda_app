@@ -1,32 +1,22 @@
 <%= form_with(model: redirect) do |form| %>
-  <% if redirect.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(redirect.errors.count, "error") %> prohibited this redirect from being saved:</h2>
-
-      <ul>
-        <% redirect.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: 'shared/errors', locals: { model: redirect } %>
 
   <div>
     <div>
-      <%= form.label :shop_id %>
-      <%= form.select :shop_id, Shop.all.map { |s| [s.name, s.id] } %>
+      <%= form.label :shop_id, class: 'form-label' %>
+      <%= form.select :shop_id, Shop.all.map { |s| [s.name, s.id] }, {}, class: 'form-select' %>
     </div>
     <div>
-      <%= form.label :origin %>
-      <%= form.text_field :origin %>
+      <%= form.label :origin, class: 'form-label' %>
+      <%= form.text_field :origin, class: 'form-control' %>
     </div>
     <div>
-      <%= form.label :destination %>
-      <%= form.text_field :destination %>
+      <%= form.label :destination, class: 'form-label' %>
+      <%= form.text_field :destination, class: 'form-control' %>
     </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit nil, class: 'btn btn-success' %>
   </div>
 <% end %>

@@ -1,36 +1,26 @@
 <%= form_with(model: shop) do |form| %>
-  <% if shop.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(shop.errors.count, "error") %> prohibited this shop from being saved:</h2>
-
-      <ul>
-        <% shop.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: 'shared/errors', locals: { model: shop } %>
 
   <div>
     <div>
-      <%= form.label :name %>
-      <%= form.text_field :name %>
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
     </div>
     <div>
-      <%= form.label :url %>
-      <%= form.text_field :url %>
+      <%= form.label :url, class: 'form-label' %>
+      <%= form.text_field :url, class: 'form-control' %>
     </div>
     <div>
-      <%= form.label :token %>
-      <%= form.text_field :token %>
+      <%= form.label :token, class: 'form-label' %>
+      <%= form.text_field :token, class: 'form-control' %>
     </div>
     <div>
-      <%= form.label :remote_id %>
-      <%= form.text_field :remote_id %>
+      <%= form.label :remote_id, class: 'form-label' %>
+      <%= form.text_field :remote_id, class: 'form-control' %>
     </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit nil, class: 'btn btn-primary' %>
   </div>
 <% end %>
